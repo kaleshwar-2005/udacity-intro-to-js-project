@@ -20,21 +20,21 @@ const products=[
     price:9,
     quantity:0,
     productId:101,
-    image:'/images/cherry.jpg'
+    imageUrl:'./images/cherry.jpg'
   },
   {
     name:"Carton of Strawberries",
     price:5,
     quantity:0,
     productId:102,
-    image:'/images/strawberry.jpg'
+    imageUrl:'./images/strawberry.jpg'
   },
   {
     name:"Bag of Oranges",
     price:8,
     quantity:0,
     productId:103,
-    image:'/images/orange.jpg'
+    imageUrl:'./images/orange.jpg'
   }
 ]
 
@@ -151,14 +151,18 @@ function emptyCart(){
   - pay will return a negative number if there is a remaining balance
   - pay will return a positive number if money should be returned to customer
 */
+let total=0;
 function pay(amount){
-  let total = 0;
+  total+=amount
 
-  for (let i = 0; i < cart.length; i++) {
-    total += cart[i].price * cart[i].quantity;
+  const remainingBalance=total-cartTotal()
+
+  if(remainingBalance>=0){
+    total=0;
+    emptyCart()
   }
 
-  return amount-total
+  return remainingBalance
 }
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
