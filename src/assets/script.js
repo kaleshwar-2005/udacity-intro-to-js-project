@@ -20,21 +20,21 @@ const products=[
     price:9,
     quantity:0,
     productId:101,
-    imageUrl:'./images/cherry.jpg'
+    image:'./images/cherry.jpg'
   },
   {
     name:"Carton of Strawberries",
     price:5,
     quantity:0,
     productId:102,
-    imageUrl:'./images/strawberry.jpg'
+    image:'./images/strawberry.jpg'
   },
   {
     name:"Bag of Oranges",
     price:8,
     quantity:0,
     productId:103,
-    imageUrl:'./images/orange.jpg'
+    image:'./images/orange.jpg'
   }
 ]
 
